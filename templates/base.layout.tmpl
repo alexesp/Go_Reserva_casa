@@ -1,0 +1,24 @@
+{{define "base"}}
+<!doctype html>
+<html>
+<head>
+<title>Our Funky HTML Page</title>
+<meta name="description" content="Our first page">
+<meta name="keywords" content="html tutorial template">
+{{block "css" .}}
+
+{{end}}
+</head>
+<body>
+{{block "content".}}
+
+
+{{end}}
+
+{{block "js" .}}
+
+
+{{end}}
+</body>
+</html>
+{{end}}
