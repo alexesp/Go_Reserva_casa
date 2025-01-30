@@ -8,8 +8,8 @@ import (
 	"path/filepath"
 	"text/template"
 
-	"github.com/alexesp/Go_Web.git/pkg/config"
-	"github.com/alexesp/Go_Web.git/pkg/models"
+	"github.com/alexesp/Go_Reserva_casa/pkg/config"
+	"github.com/alexesp/Go_Reserva_casa/pkg/models"
 )
 
 var functions = template.FuncMap{}

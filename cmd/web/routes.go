@@ -3,8 +3,8 @@ package main
 import (
 	"net/http"
 
-	"github.com/alexesp/Go_Web.git/pkg/config"
-	"github.com/alexesp/Go_Web.git/pkg/handlers"
+	"github.com/alexesp/Go_Reserva_casa/pkg/config"
+	"github.com/alexesp/Go_Reserva_casa/pkg/handlers"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 )
@@ -20,10 +20,8 @@ func routes(app *config.AppConfig) http.Handler {
 	mux.Use(middleware.Recoverer)
 	//mux.Use(WriteToConsole)
 	mux.Use(NoSurf)
-<<<<<<< HEAD
+
 	mux.Use(SessionLoad)
-=======
->>>>>>> 78dbfccc79d9e2e36fc15478bb540ffb722be8bc
 
 	mux.Get("/home", handlers.Repo.Home)
 	mux.Get("/about", handlers.Repo.About)

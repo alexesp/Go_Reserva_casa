@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/alexedwards/scs/v2"
-	"github.com/alexesp/Go_Web.git/pkg/config"
-	"github.com/alexesp/Go_Web.git/pkg/handlers"
-	"github.com/alexesp/Go_Web.git/pkg/render"
+	"github.com/alexesp/Go_Reserva_casa/pkg/config"
+	"github.com/alexesp/Go_Reserva_casa/pkg/handlers"
+	"github.com/alexesp/Go_Reserva_casa/pkg/render"
 )
 
 const portNumber = ":8088"
