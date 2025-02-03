@@ -1,5 +1,50 @@
-{{template "base"}}
+{{template "base".}}
 
-{{define"content".}}
-
+{{define "content"}}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="mt-5">Buscar la disponibilidad.</h1>
+      <form action="/make-reservation" method="get">
+        <div class="form-row">
+          <div class="col">
+            <div class="form-group">
+              <label for="start_date">Intrudusca la fecha del inicio</label>
+              <input
+                required
+                type="date"
+                class="form-control"
+                id="start_date"
+                name="start_date"
+                aria-describedby="startDateHelp"
+              />
+              <small id="startDateHelp" class="form-text text-muted"
+                >Introdusca la fecha en formato YYYY-MM-DD.</small
+              >
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label for="end_date">Intrudusca la fecha del fin</label>
+              <input
+                required
+                type="date"
+                class="form-control"
+                id="end_date"
+                name="end_date"
+                aria-describedby="startDateHelp"
+              />
+              <small id="endDateHelp" class="form-text text-muted"
+                >Introdusca la fecha en formato YYYY-MM-DD.</small
+              >
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Buscar disponibilidad
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
 {{ end }}
