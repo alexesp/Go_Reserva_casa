@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"github.com/alexesp/Go_Reserva_casa/pkg/config"
+	"github.com/alexesp/Go_Reserva_casa/pkg/forms"
 	"github.com/alexesp/Go_Reserva_casa/pkg/models"
 	"github.com/alexesp/Go_Reserva_casa/pkg/render"
 )
@@ -45,13 +46,16 @@ func (m *Repository) Contacto(w http.ResponseWriter, r *http.Request) {
 	render.RenderTemplate(w, r,"contacto.page.tmpl", &models.TemplateData{})
 }
 func (m *Repository) Reservation(w http.ResponseWriter, r *http.Request) {
-	render.RenderTemplate(w, r,"make-reservation.page.tmpl", &models.TemplateData{})
+	render.RenderTemplate(w, r,"make-reservation.page.tmpl", &models.TemplateData{
+		Form: forms.New(nil),
+	})
+	
 }
 func (m *Repository) PostReservation(w http.ResponseWriter, r *http.Request) {
-	start := r.Form.Get("start")
-	end := r.Form.Get("end")
+	start := r.Form.Get("start_date")
+	end := r.Form.Get("end_date")
 	w.Write([]byte(fmt.Sprintf("start data is %s and end date is %s", start, end)))
-	render.RenderTemplate(w, r,"make-reservation.page.tmpl", &models.TemplateData{})
+	//render.RenderTemplate(w, r,"generals.page.tmpl", &models.TemplateData{})
 }
 
 func (m *Repository) Search(w http.ResponseWriter, r *http.Request) {	
@@ -62,8 +66,8 @@ func (m *Repository) Generals(w http.ResponseWriter, r *http.Request) {
 	render.RenderTemplate(w, r,"generals.page.tmpl", &models.TemplateData{})
 }
 func (m *Repository) PostGenerals(w http.ResponseWriter, r *http.Request) {
-	start := r.Form.Get("start")
-	end := r.Form.Get("end")
+	start := r.Form.Get("first_name")
+	end := r.Form.Get("last_name")
 	w.Write([]byte(fmt.Sprintf("start data is %s and end date is %s", start, end)))
-	render.RenderTemplate(w, r,"generals.page.tmpl", &models.TemplateData{})
+	//render.RenderTemplate(w, r,"generals.page.tmpl", &models.TemplateData{})
 }
